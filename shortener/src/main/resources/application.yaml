@@ -1,15 +1,22 @@
+app:
+  base-url: http://localhost:8080
+
 spring:
+  docker:
+    compose:
+      enabled: false
+
   application:
     name: shortener
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/urlshortener
+    url: jdbc:postgresql://localhost:5433/urlshortener
     username: postgres
     password: root
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
 
   flyway:
